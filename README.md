@@ -13,6 +13,12 @@ brew install nginx
 1. Modify the config file in the nginx/conf folder - provide full paths to the cert file
 Change the listening port or the forwarding ports as required
 
+1. On Mac, install the Root certifcate to trust it... 
+
+```
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ca_cert.pem
+```
+
 1. Test the conf file changes like below:
 
 ```
