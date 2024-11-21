@@ -39,6 +39,10 @@ nginx -g "daemon off;" -c /Full/path/to/nginx/conf/nginx.conf
 
 1. Now point your client to https://localhost:port/<something> and this forwards it to the corresponding http://localhost:someport/<something> 
 
+# NOTE:
+If you are going to test using some python client, you may have to set the corresponding CA for the cert. In case you are using the sample certs in this repo, do the following
 
-
+```
+export REQUESTS_CA_BUNDLE=/Full/path/to/ca_cert.pem
+```
 
