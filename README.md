@@ -23,6 +23,11 @@ If all things are fine, run nginx in background mode like below. If the listen p
 nginx -c /Full/path/to/nginx/conf/nginx.conf
 ```
 
+If you want the nginx instance to run in foreground, you can use:
+```
+nginx -g "daemon off;" -c /Full/path/to/nginx/conf/nginx.conf
+```
+
 Now point your client to https://localhost:port/<something> and this forwards it to the corresponding http://localhost:someport/<something> 
 
 
