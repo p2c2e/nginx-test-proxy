@@ -43,6 +43,12 @@ nginx -g "daemon off;" -c /Full/path/to/nginx/conf/nginx.conf
 If you are going to test using some python client, you may have to set the corresponding CA for the cert. In case you are using the sample certs in this repo, do the following
 
 ```
-export REQUESTS_CA_BUNDLE=/Full/path/to/ca_cert.pem
+export REQUESTS_CA_BUNDLE=/Full/path/to/all_in_one.pem
+export SSL_CERT_FILE=/Full/path/to/all_in_one.pem
 ```
+
+The all_in_one.pem file consists of the cert file in Python + the ca_cert.pem for the sample cert
+You can find the location of a recent Python cert file by installing certifi, and querying certifi.where().
+
+cat <cacert file from certifi> <ca_cert.pem from this repo> > all_in_one.pem
 
