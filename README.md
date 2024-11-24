@@ -51,4 +51,5 @@ The all_in_one.pem file consists of the cert file in Python + the ca_cert.pem fo
 You can find the location of a recent Python cert file by installing certifi, and querying certifi.where().
 
 cat <cacert file from certifi> <ca_cert.pem from this repo> > all_in_one.pem
-
+For e.g.:
+cat `python -c "import certifi; print(certifi.where())"` ./ca_cert.pem > all_in_one.pem
